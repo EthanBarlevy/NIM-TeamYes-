@@ -5,8 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NIM_TeamYes_"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Background="#FF60AEFB">
     <Grid>
+        <Button Content="|" HorizontalAlignment="Left" Margin="290,35,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="249,98,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="290,98,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="328,98,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="249,159,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="290,159,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="328,159,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="363,159,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="212,159,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="249,217,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="290,217,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="328,217,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="363,217,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="212,217,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
+        <Button Content="|" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="176,217,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
+        <Button Content="Row 1" HorizontalAlignment="Left" Margin="472,50,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="70"/>
+        <Button Content="Row 2" HorizontalAlignment="Left" Margin="472,113,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="70"/>
+        <Button Content="Row 3" HorizontalAlignment="Left" Margin="472,174,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="70"/>
+        <Button Content="Row 4" HorizontalAlignment="Left" Margin="472,232,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="70"/>
+        <Rectangle HorizontalAlignment="Left" Height="45" Margin="145,339,0,0" Stroke="Black" VerticalAlignment="Top" Width="141" Fill="#FF929292"/>
+        <Rectangle HorizontalAlignment="Left" Height="45" Margin="516,339,0,0" Stroke="Black" VerticalAlignment="Top" Width="141" Fill="#FF929292"/>
+        <TextBlock HorizontalAlignment="Left" Margin="181,348,0,0" TextWrapping="Wrap" Text="Player 1" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="549,348,0,0" TextWrapping="Wrap" Text="Player 2" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
 
     </Grid>
 </Window>
