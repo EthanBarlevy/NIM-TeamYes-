@@ -18,7 +18,7 @@ namespace NIM_TeamYes_
 	{
 		private int[] Matches = { 1, 3, 5, 7 };
 		private int SelectedRow = -1;
-		private int MatchesSelected = -1;
+		private int MatchesSelected = 0;
 		private bool Turn = true;
 		private bool IsGameOver = false;
 
@@ -29,18 +29,39 @@ namespace NIM_TeamYes_
 
 		public void OnMatchClicked(object sender, RoutedEventArgs e)
 		{
-			if (true) // check selected row class of the button
-			{ 
-				MatchesSelected++;
+			if (true) // !sender.selected
+			{
+				if (true) // sender.row == selectedrow
+				{
+					MatchesSelected++;
+					// sender.selected = true
+				}
+				else
+				{
+					if (true) // selected row == -1
+					{
+						MatchesSelected = 1;
+						// set selected row
+						// sender.selected = true
+					}
+					else
+					{
+						// call resetrow(selected row)
+						MatchesSelected = 1;
+						// set selected row
+						// sender.selected = true
+					}
+				}
 			}
-            else
-            {
-				MatchesSelected = 1;
-				// set selected row
-				// call resetrow
-            }
-
-
+			else
+			{
+				MatchesSelected--;
+				// sender.selected = false
+				if (MatchesSelected == 0)
+				{
+					SelectedRow = -1;
+				}
+			}
         }
 	}
 }
