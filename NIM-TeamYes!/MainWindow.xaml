@@ -7,22 +7,22 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="#FF60AEFB">
     <Grid>
-        <Button Content="|" HorizontalAlignment="Left" Margin="290,35,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
-        <Button Content="|" HorizontalAlignment="Left" Margin="249,98,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
-        <Button Content="|" HorizontalAlignment="Left" Margin="290,98,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
-        <Button Content="|" HorizontalAlignment="Left" Margin="328,98,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
-        <Button Content="|" HorizontalAlignment="Left" Margin="249,159,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
-        <Button Content="|" HorizontalAlignment="Left" Margin="290,159,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
-        <Button Content="|" HorizontalAlignment="Left" Margin="328,159,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
-        <Button Content="|" HorizontalAlignment="Left" Margin="363,159,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
-        <Button Content="|" HorizontalAlignment="Left" Margin="212,159,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
-        <Button Content="|" HorizontalAlignment="Left" Margin="249,217,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
-        <Button Content="|" HorizontalAlignment="Left" Margin="290,217,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
-        <Button Content="|" HorizontalAlignment="Left" Margin="328,217,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
-        <Button Content="|" HorizontalAlignment="Left" Margin="363,217,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
-        <Button Content="|" HorizontalAlignment="Left" Margin="212,217,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
-        <Button Content="|" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
-        <Button Content="|" HorizontalAlignment="Left" Margin="176,217,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="290,35,0,0" VerticalAlignment="Top" Background="Black" Height="50" Click="OnMatchClicked" Tag="1"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="249,98,0,0" VerticalAlignment="Top" Background="Black" Height="50" Click="OnMatchClicked" Tag="2"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="290,98,0,0" VerticalAlignment="Top" Background="Black" Height="50" Click="OnMatchClicked" Tag="2"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="328,98,0,0" VerticalAlignment="Top" Background="Black" Height="50" Click="OnMatchClicked" Tag="2"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="249,159,0,0" VerticalAlignment="Top" Background="Black" Height="50" Click="OnMatchClicked" Tag="3"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="290,159,0,0" VerticalAlignment="Top" Background="Black" Height="50" Click="OnMatchClicked" Tag="3"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="328,159,0,0" VerticalAlignment="Top" Background="Black" Height="50" Click="OnMatchClicked" Tag="3"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="363,159,0,0" VerticalAlignment="Top" Background="Black" Height="50" Click="OnMatchClicked" Tag="3"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="212,159,0,0" VerticalAlignment="Top" Background="Black" Height="50" Click="OnMatchClicked" Tag="3"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="249,217,0,0" VerticalAlignment="Top" Background="Black" Height="50" Click="OnMatchClicked" Tag="4"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="290,217,0,0" VerticalAlignment="Top" Background="Black" Height="50" Click="OnMatchClicked" Tag="4"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="328,217,0,0" VerticalAlignment="Top" Background="Black" Height="50" Click="OnMatchClicked" Tag="4"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="363,217,0,0" VerticalAlignment="Top" Background="Black" Height="50" Click="OnMatchClicked" Tag="4"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="212,217,0,0" VerticalAlignment="Top" Background="Black" Height="50" Click="OnMatchClicked" Tag="4"/>
+        <Button Content="|" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Background="Black" Height="50" Click="OnMatchClicked" Tag="4"/>
+        <Button Content="|" HorizontalAlignment="Left" Margin="176,217,0,0" VerticalAlignment="Top" Background="Black" Height="50" Click="OnMatchClicked" Tag="4"/>
         <Rectangle HorizontalAlignment="Left" Height="45" Margin="145,339,0,0" Stroke="Black" VerticalAlignment="Top" Width="141" Fill="#FF929292"/>
         <Rectangle HorizontalAlignment="Left" Height="45" Margin="516,339,0,0" Stroke="Black" VerticalAlignment="Top" Width="141" Fill="#FF929292"/>
         <TextBlock HorizontalAlignment="Left" Margin="181,348,0,0" TextWrapping="Wrap" Text="Player 1" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>

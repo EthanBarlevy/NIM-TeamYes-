@@ -31,7 +31,7 @@ namespace NIM_TeamYes_
 		{
 			if (true) // !sender.selected
 			{
-				if (true) // sender.row == selectedrow
+				if ((sender as Button).Tag.ToString() == SelectedRow.ToString()) // sender.row == selectedrow
 				{
 					MatchesSelected++;
 					// sender.selected = true
