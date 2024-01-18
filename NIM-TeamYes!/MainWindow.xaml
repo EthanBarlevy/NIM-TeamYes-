@@ -23,14 +23,18 @@
         <Button Content="|" HorizontalAlignment="Left" Margin="212,217,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
         <Button Content="|" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
         <Button Content="|" HorizontalAlignment="Left" Margin="176,217,0,0" VerticalAlignment="Top" Background="Black" Height="50"/>
-        <Button Content="Row 1" HorizontalAlignment="Left" Margin="472,50,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="70"/>
-        <Button Content="Row 2" HorizontalAlignment="Left" Margin="472,113,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="70"/>
-        <Button Content="Row 3" HorizontalAlignment="Left" Margin="472,174,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="70"/>
-        <Button Content="Row 4" HorizontalAlignment="Left" Margin="472,232,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="70"/>
         <Rectangle HorizontalAlignment="Left" Height="45" Margin="145,339,0,0" Stroke="Black" VerticalAlignment="Top" Width="141" Fill="#FF929292"/>
         <Rectangle HorizontalAlignment="Left" Height="45" Margin="516,339,0,0" Stroke="Black" VerticalAlignment="Top" Width="141" Fill="#FF929292"/>
         <TextBlock HorizontalAlignment="Left" Margin="181,348,0,0" TextWrapping="Wrap" Text="Player 1" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Margin="549,348,0,0" TextWrapping="Wrap" Text="Player 2" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
+        <Rectangle HorizontalAlignment="Left" Height="29" Margin="489,45,0,0" Stroke="Black" VerticalAlignment="Top" Width="100" Fill="#FFA6A6A6"/>
+        <TextBlock HorizontalAlignment="Left" Margin="516,49,0,0" TextWrapping="Wrap" Text="Row 1" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Rectangle HorizontalAlignment="Left" Height="29" Margin="489,102,0,0" Stroke="Black" VerticalAlignment="Top" Width="100" Fill="#FFA6A6A6"/>
+        <TextBlock HorizontalAlignment="Left" Margin="516,106,0,0" TextWrapping="Wrap" Text="Row 2" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Rectangle HorizontalAlignment="Left" Height="29" Margin="489,163,0,0" Stroke="Black" VerticalAlignment="Top" Width="100" Fill="#FFA6A6A6"/>
+        <TextBlock HorizontalAlignment="Left" Margin="516,167,0,0" TextWrapping="Wrap" Text="Row 3" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Rectangle HorizontalAlignment="Left" Height="29" Margin="489,221,0,0" Stroke="Black" VerticalAlignment="Top" Width="100" Fill="#FFA6A6A6"/>
+        <TextBlock HorizontalAlignment="Left" Margin="516,225,0,0" TextWrapping="Wrap" Text="Row 4" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
 
     </Grid>
 </Window>
