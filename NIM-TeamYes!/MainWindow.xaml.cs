@@ -29,34 +29,34 @@ namespace NIM_TeamYes_
 
 		public void OnMatchClicked(object sender, RoutedEventArgs e)
 		{
-			if (true) // !sender.selected
+			if ((sender as Button).Background == Brushes.Black) // !sender.background == black
 			{
 				if ((sender as Button).Tag.ToString() == SelectedRow.ToString()) // sender.row == selectedrow
 				{
 					MatchesSelected++;
-					// sender.selected = true
+					(sender as Button).Background = Brushes.Gray; // sender.background = gray
 				}
 				else
 				{
-					if (true) // selected row == -1
+					if (SelectedRow == -1) // selected row == -1
 					{
 						MatchesSelected = 1;
-						// set selected row
-						// sender.selected = true
+						SelectedRow = int.Parse((sender as Button).Tag.ToString());
+						(sender as Button).Background = Brushes.Gray; // sender.background = gray
 					}
 					else
 					{
 						// call resetrow(selected row)
 						MatchesSelected = 1;
-						// set selected row
-						// sender.selected = true
+						SelectedRow = int.Parse((sender as Button).Tag.ToString()); // set selected row
+						(sender as Button).Background = Brushes.Gray; // sender.selected = true
 					}
 				}
 			}
 			else
 			{
 				MatchesSelected--;
-				// sender.selected = false
+				(sender as Button).Background = Brushes.Black;
 				if (MatchesSelected == 0)
 				{
 					SelectedRow = -1;
