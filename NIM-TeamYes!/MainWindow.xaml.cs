@@ -49,14 +49,14 @@ namespace NIM_TeamYes_
 						// call resetrow(selected row)
 						MatchesSelected = 1;
 						SelectedRow = int.Parse((sender as Button).Tag.ToString()); // set selected row
-						(sender as Button).Background = Brushes.Gray; // sender.selected = true
+						(sender as Button).Background = Brushes.Gray; // sender.background = gray
 					}
 				}
 			}
 			else
 			{
 				MatchesSelected--;
-				(sender as Button).Background = Brushes.Black;
+				(sender as Button).Background = Brushes.Black; // sender.background = black
 				if (MatchesSelected == 0)
 				{
 					SelectedRow = -1;
