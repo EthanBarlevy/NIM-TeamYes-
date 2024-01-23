@@ -63,5 +63,49 @@ namespace NIM_TeamYes_
 				}
 			}
         }
+
+		public void OnEndTurnClick()
+		{
+			RemoveMatches(SelectedRow, MatchesSelected);
+			CheckGameOver();
+			Turn = !Turn;
+
+			// eef do this -> Change color of elements, based on turn, to indicate that it is the next players turn.
+		}
+
+		public void OnResetGame()
+		{
+
+		}
+
+		public void RemoveMatches(int row, int matches)
+		{
+			if (Matches[SelectedRow] >= matches)
+			{
+				Matches[SelectedRow] = Matches[SelectedRow] - matches;
+				// eef do this -> Hide all match images that have been selected
+			}
+		}
+
+		public void ResetRow()
+		{
+
+		}
+
+		public void CheckGameOver()
+		{
+			int totalMatchesLeft = 0;
+
+			foreach (int matches in Matches)
+			{
+				totalMatchesLeft += matches;
+			}
+
+			if (totalMatchesLeft == 0) 
+			{
+				IsGameOver = true;
+				// eef do this -> Display who won
+			}
+		}
 	}
 }
