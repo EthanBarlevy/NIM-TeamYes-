@@ -30,7 +30,7 @@ namespace NIM_TeamYes_
 
 		public void OnMatchClicked(object sender, RoutedEventArgs e)
 		{
-			if ((sender as Button).Background == Brushes.Black) // !sender.background == black
+			if ((sender as Button).Background == Brushes.Black) // sender.background == black
 			{
 				if ((sender as Button).Tag.ToString() == SelectedRow.ToString()) // sender.row == selectedrow
 				{
@@ -47,7 +47,7 @@ namespace NIM_TeamYes_
 					}
 					else
 					{
-						// call resetrow(selected row)
+						ResetRow();
 						MatchesSelected = 1;
 						SelectedRow = int.Parse((sender as Button).Tag.ToString()); // set selected row
 						(sender as Button).Background = Brushes.Gray; // sender.background = gray
