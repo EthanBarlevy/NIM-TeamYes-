@@ -36,6 +36,8 @@
         <Rectangle HorizontalAlignment="Left" Height="29" Margin="489,221,0,0" Stroke="Black" VerticalAlignment="Top" Width="100" Fill="#FFA6A6A6"/>
         <TextBlock HorizontalAlignment="Left" Margin="516,225,0,0" TextWrapping="Wrap" Text="Row 4" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Button Name="TurnButton" Content="End Turn" HorizontalAlignment="Center" Margin="0,361,0,0" VerticalAlignment="Top" Width="88" Height="41" RenderTransformOrigin="0.512,2.555" Click="OnEndTurnClick"/>
-
+        <Rectangle Name="GameOver" HorizontalAlignment="Center" Height="200" Width="400" Stroke="Black" Fill="#FFA6A6A6" Visibility="Hidden"/>
+        <TextBlock Name="Player1Win" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" Text="Player 1 Wins!" Visibility="Hidden"/>
+        <TextBlock Name="Player2Win" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" Text="Player 2 Wins!" Visibility="Hidden"/>
     </Grid>
 </Window>

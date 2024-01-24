@@ -67,25 +67,52 @@ namespace NIM_TeamYes_
 
 		public void OnEndTurnClick(object sender, RoutedEventArgs e)
 		{
-			RemoveMatches(SelectedRow, MatchesSelected);
-			CheckGameOver();
-			Turn = !Turn;
-
-			if (Turn)
-			{
-				Background = Brushes.CornflowerBlue; 
+			if (IsGameOver)
+			{ 
+				OnResetGame();
 			}
-			if (!Turn)
-			{
-				Background = Brushes.MediumVioletRed;
-			}
+			if (MatchesSelected > 0)
+			{ 
+				RemoveMatches(SelectedRow, MatchesSelected);
+				CheckGameOver();
+				Turn = !Turn;
+				MatchesSelected = 0;
 
+				if (Turn)
+				{
+					Background = Brushes.CornflowerBlue; 
+				}
+				if (!Turn)
+				{
+					Background = Brushes.MediumVioletRed;
+				}
+			}
 			// eef do this -> Change color of elements, based on turn, to indicate that it is the next players turn.
 		}
 
 		public void OnResetGame()
 		{
-
+			foreach (Button b in FindVisualChildren<Button>(this))
+			{
+				if (b.Visibility == Visibility.Hidden)
+				{
+					b.Background = Brushes.Black;
+					b.Visibility = Visibility.Visible;
+				}
+				if ((string)b.Content == "Restart Game")
+				{
+					b.Content = "End Turn";
+				}
+			}
+			int[] ma = { 1, 3, 5, 7 };
+			Matches = ma;
+			SelectedRow = -1;
+			Turn = true;
+			IsGameOver = false;
+			MatchesSelected = 0;
+			GameOver.Visibility = Visibility.Hidden;
+			Player1Win.Visibility = Visibility.Hidden;
+			Player2Win.Visibility = Visibility.Hidden;
 		}
 
 		public void RemoveMatches(int row, int matches)
@@ -98,7 +125,7 @@ namespace NIM_TeamYes_
 				{
 					if (b.Background == Brushes.Gray)
 					{ 
-						b.IsEnabled = false;
+						b.Visibility = Visibility.Hidden;
 					}
 				}
 			}
@@ -106,7 +133,13 @@ namespace NIM_TeamYes_
 
 		public void ResetRow()
 		{
-
+			foreach (Button b in FindVisualChildren<Button>(this))
+			{
+				if (b.Background == Brushes.Gray)
+				{
+					b.Background = Brushes.Black;
+				}
+			}
 		}
 
 		public void CheckGameOver()
@@ -118,12 +151,27 @@ namespace NIM_TeamYes_
 				totalMatchesLeft += matches;
 			}
 
-			if (totalMatchesLeft == 0) 
+			if (totalMatchesLeft == 1) 
 			{
 				IsGameOver = true;
-
-				
+				foreach (Button b in FindVisualChildren<Button>(this))
+				{
+					if ((string)b.Content == "End Turn")
+					{
+						b.Content = "Restart Game";
+					}
+				}
 				// eef do this -> Display who won
+				GameOver.Visibility = Visibility.Visible;
+				switch (Turn)
+				{
+					case true:
+						Player1Win.Visibility = Visibility.Visible;
+						break;
+					case false:
+						Player2Win.Visibility = Visibility.Visible;
+						break;
+				}
 			}
 		}
 
