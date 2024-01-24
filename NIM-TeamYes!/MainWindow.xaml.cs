@@ -90,10 +90,17 @@ namespace NIM_TeamYes_
 
 		public void RemoveMatches(int row, int matches)
 		{
-			if (Matches[SelectedRow] >= matches)
+			if (Matches[SelectedRow - 1] >= matches)
 			{
-				Matches[SelectedRow] = Matches[SelectedRow] - matches;
+				Matches[SelectedRow - 1] = Matches[SelectedRow - 1] - matches;
 				// eef do this -> Hide all match images that have been selected
+				foreach (Button b in FindVisualChildren<Button>(this))
+				{
+					if (b.Background == Brushes.Gray)
+					{ 
+						b.IsEnabled = false;
+					}
+				}
 			}
 		}
 
@@ -119,5 +126,19 @@ namespace NIM_TeamYes_
 				// eef do this -> Display who won
 			}
 		}
-    }
+
+		// stealing code
+		// https://stackoverflow.com/questions/974598/find-all-controls-in-wpf-window-by-type
+		public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
+		{
+			if (depObj == null) yield return (T)Enumerable.Empty<T>();
+			for (int i = 0; i < VisualTreeHelper.GetChildrenCount(depObj); i++)
+			{
+				DependencyObject ithChild = VisualTreeHelper.GetChild(depObj, i);
+				if (ithChild == null) continue;
+				if (ithChild is T t) yield return t;
+				foreach (T childOfChild in FindVisualChildren<T>(ithChild)) yield return childOfChild;
+			}
+		}
+	}
 }
