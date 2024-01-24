@@ -30,55 +30,55 @@ namespace NIM_TeamYes_
 
 		public void OnMatchClicked(object sender, RoutedEventArgs e)
 		{
-			if ((sender as Button).Background == Brushes.Black) // sender.background == black
+			if ((sender as Button).Background == Brushes.Black) // if match is not selected
 			{
-				if ((sender as Button).Tag.ToString() == SelectedRow.ToString()) // sender.row == selectedrow
+				if ((sender as Button).Tag.ToString() == SelectedRow.ToString()) // if the match is on the same row that we already selected
 				{
 					MatchesSelected++;
-					(sender as Button).Background = Brushes.Gray; // sender.background = gray
+					(sender as Button).Background = Brushes.Gray; // select the match
 				}
 				else
 				{
-					if (SelectedRow == -1) // selected row == -1
+					if (SelectedRow == -1) // if we havent selected a row
 					{
 						MatchesSelected = 1;
-						SelectedRow = int.Parse((sender as Button).Tag.ToString());
-						(sender as Button).Background = Brushes.Gray; // sender.background = gray
+						SelectedRow = int.Parse((sender as Button).Tag.ToString()); // set the row 
+						(sender as Button).Background = Brushes.Gray; // select the match
 					}
 					else
 					{
-						ResetRow();
+						ResetRow(); // clear all selected matches
 						MatchesSelected = 1;
 						SelectedRow = int.Parse((sender as Button).Tag.ToString()); // set selected row
-						(sender as Button).Background = Brushes.Gray; // sender.background = gray
+						(sender as Button).Background = Brushes.Gray; // select the match
 					}
 				}
 			}
-			else
+			else // if we click a match that is already selected
 			{
 				MatchesSelected--;
-				(sender as Button).Background = Brushes.Black; // sender.background = black
-				if (MatchesSelected == 0)
+				(sender as Button).Background = Brushes.Black; // deselect the match
+				if (MatchesSelected == 0) // if it was the last match in the row
 				{
-					SelectedRow = -1;
+					SelectedRow = -1; // set selected row to none
 				}
 			}
         }
 
 		public void OnEndTurnClick(object sender, RoutedEventArgs e)
 		{
-			if (IsGameOver)
+			if (IsGameOver) // check if the game is over
 			{ 
-				OnResetGame();
+				OnResetGame(); // reset the game
 			}
-			if (MatchesSelected > 0)
+			if (MatchesSelected > 0) // make sure that we have selected any matches
 			{ 
-				RemoveMatches(SelectedRow, MatchesSelected);
-				CheckGameOver();
-				Turn = !Turn;
-				MatchesSelected = 0;
+				RemoveMatches(SelectedRow, MatchesSelected); // remove all matches that have been selected
+				CheckGameOver(); // check if the game should end
+				Turn = !Turn; // swap to other player's turn
+				MatchesSelected = 0; // reset how many matches we have selected
 
-				if (Turn)
+				if (Turn) // change color to indicate player turn change
 				{
 					Background = Brushes.CornflowerBlue; 
 				}
@@ -87,12 +87,11 @@ namespace NIM_TeamYes_
 					Background = Brushes.MediumVioletRed;
 				}
 			}
-			// eef do this -> Change color of elements, based on turn, to indicate that it is the next players turn.
 		}
 
 		public void OnResetGame()
 		{
-			foreach (Button b in FindVisualChildren<Button>(this))
+			foreach (Button b in FindVisualChildren<Button>(this)) // make each match visible and unselected
 			{
 				if (b.Visibility == Visibility.Hidden)
 				{
@@ -104,6 +103,7 @@ namespace NIM_TeamYes_
 					b.Content = "End Turn";
 				}
 			}
+			// reset all variables and elements to their original value
 			int[] ma = { 1, 3, 5, 7 };
 			Matches = ma;
 			SelectedRow = -1;
@@ -117,11 +117,10 @@ namespace NIM_TeamYes_
 
 		public void RemoveMatches(int row, int matches)
 		{
-			if (Matches[SelectedRow - 1] >= matches)
+			if (Matches[SelectedRow - 1] >= matches) // make sure that we arent removing more matches than we have
 			{
-				Matches[SelectedRow - 1] = Matches[SelectedRow - 1] - matches;
-				// eef do this -> Hide all match images that have been selected
-				foreach (Button b in FindVisualChildren<Button>(this))
+				Matches[SelectedRow - 1] = Matches[SelectedRow - 1] - matches; // remove the matches
+				foreach (Button b in FindVisualChildren<Button>(this)) // hide all of the matches that we had selected
 				{
 					if (b.Background == Brushes.Gray)
 					{ 
@@ -133,7 +132,7 @@ namespace NIM_TeamYes_
 
 		public void ResetRow()
 		{
-			foreach (Button b in FindVisualChildren<Button>(this))
+			foreach (Button b in FindVisualChildren<Button>(this)) // deselect all matches that are selected
 			{
 				if (b.Background == Brushes.Gray)
 				{
@@ -148,20 +147,20 @@ namespace NIM_TeamYes_
 
 			foreach (int matches in Matches)
 			{
-				totalMatchesLeft += matches;
+				totalMatchesLeft += matches; // find how many matches are left in the game
 			}
 
-			if (totalMatchesLeft == 1) 
+			if (totalMatchesLeft == 1) // if we are left with one match
 			{
 				IsGameOver = true;
-				foreach (Button b in FindVisualChildren<Button>(this))
+				foreach (Button b in FindVisualChildren<Button>(this)) // change the text of the end turn button
 				{
 					if ((string)b.Content == "End Turn")
 					{
 						b.Content = "Restart Game";
 					}
 				}
-				// eef do this -> Display who won
+				// display which player won based on whose turn it is
 				GameOver.Visibility = Visibility.Visible;
 				switch (Turn)
 				{
@@ -176,6 +175,7 @@ namespace NIM_TeamYes_
 		}
 
 		// stealing code
+		// basically it just looks at all of the elements on the window and returns them based on what type I want
 		// https://stackoverflow.com/questions/974598/find-all-controls-in-wpf-window-by-type
 		public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
 		{
