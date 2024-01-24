@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Runtime;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -64,11 +65,20 @@ namespace NIM_TeamYes_
 			}
         }
 
-		public void OnEndTurnClick()
+		public void OnEndTurnClick(object sender, RoutedEventArgs e)
 		{
 			RemoveMatches(SelectedRow, MatchesSelected);
 			CheckGameOver();
 			Turn = !Turn;
+
+			if (Turn)
+			{
+				Background = Brushes.CornflowerBlue; 
+			}
+			if (!Turn)
+			{
+				Background = Brushes.MediumVioletRed;
+			}
 
 			// eef do this -> Change color of elements, based on turn, to indicate that it is the next players turn.
 		}
@@ -104,8 +114,10 @@ namespace NIM_TeamYes_
 			if (totalMatchesLeft == 0) 
 			{
 				IsGameOver = true;
+
+				
 				// eef do this -> Display who won
 			}
 		}
-	}
+    }
 }
