@@ -17,11 +17,11 @@ namespace NIM_TeamYes_
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		private int[] Matches = { 1, 3, 5, 7 };
-		private int SelectedRow = -1;
-		private int MatchesSelected = 0;
-		private bool Turn = true;
-		private bool IsGameOver = false;
+		public int[] Matches = { 1, 3, 5, 7 };
+		public int SelectedRow = -1;
+		public int MatchesSelected = 0;
+		public bool Turn = true;
+		public bool IsGameOver = false;
 
 		public MainWindow()
 		{
